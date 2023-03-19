@@ -3,12 +3,15 @@ package xpathLocator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class IRCTC_Train_Locator {
 
 	public static void main(String[] args) throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
-		WebDriver driver=new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver1.exe");
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--remote-allow-origins=*");
+		WebDriver driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.get("https://www.irctc.co.in/nget/train-search");
 		Thread.sleep(2000);

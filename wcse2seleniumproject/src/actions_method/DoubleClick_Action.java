@@ -31,6 +31,7 @@ public class DoubleClick_Action {
 	
 	 driver.findElement(By.xpath("//label[@for='uploadNewLogoOption']")).click();
 	 
+	 
 	 WebElement target2 = driver.findElement(By.name("formCustomInterfaceLogo.logo"));
 	
 	//To perform doubleclick action

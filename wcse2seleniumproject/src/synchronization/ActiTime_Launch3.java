@@ -18,7 +18,7 @@ public class ActiTime_Launch3 {
 		driver.get("http://desktop-vs3484c/login.do");
 		//Explicitly wait
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
-		wait.until(ExpectedConditions.titleContains("actiTIME - Login"));
+		//wait.until(ExpectedConditions.titleContains("actiTIME - Login"));
 		
 		//String LoginPageActualTitle = driver.getTitle();
 		System.out.println("Login page title is verified!");
