@@ -1,6 +1,7 @@
 package assignments;
 
 import java.time.Duration;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -20,6 +21,13 @@ public class Flipkart {
 		driver.findElement(By.xpath("//button[.='✕']")).click();//handled hidden division popup	
 		driver.findElement(By.xpath("//input[@class='_3704LK']")).sendKeys("iphone");
 		driver.findElement(By.xpath("//button[@class='L0Z3Pu']")).click();
+		driver.findElement(By.xpath("(//div[@class='_4rR01T'])[1]")).click();
+		
+		Set<String> allHandles = driver.getWindowHandles();
+		 for(String wh:allHandles)
+		 {
+			 System.out.println("This is the address of all windows:"+wh);
+		 }
 	}
 
 }
