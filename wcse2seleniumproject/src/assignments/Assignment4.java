@@ -29,8 +29,6 @@ public class Assignment4 {
 			 if(!parentHandle.equals(wh))
 			 {
 				 driver.switchTo().window(wh).close();
-		
-				 driver.manage().window().maximize();
 			 }
 			 else
 			 {

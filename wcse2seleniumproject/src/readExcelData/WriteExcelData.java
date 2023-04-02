@@ -27,7 +27,7 @@ public class WriteExcelData {
 		//Cell cell2=row.getCell(2);
 		//cell2.setCellValue("Pass");
 	
-		FileOutputStream fos = new FileOutputStream("./data/Test_Data.xlsx");
+		FileOutputStream fos = new FileOutputStream("./data/Test_Data.xlsx");//To write
 		wb.write(fos);//make the file ready for write
 		
 		
