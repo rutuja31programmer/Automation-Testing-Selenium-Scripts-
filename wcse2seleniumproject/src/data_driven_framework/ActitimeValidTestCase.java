@@ -35,6 +35,7 @@ public class ActitimeValidTestCase {
 		driver.findElement(By.name("username")).sendKeys(flib.readExcelData("./data/ActitimeTestData.xlsx","Validcreds",1,0));
 		driver.findElement(By.name("pwd")).sendKeys(flib.readExcelData("./data/ActitimeTestData.xlsx","Validcreds",1,1));
 		driver.findElement(By.id("loginButton")).click();
+		driver.close();
 	}
 
 

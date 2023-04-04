@@ -2,6 +2,7 @@ package data_driven_framework;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
@@ -15,7 +16,7 @@ public class Flib {
 
 	//To store generic Reusable methods
 	//Flib->File Liberary
-	//all the generic reusable methods are nonstatic in nature
+	//all the generic reusable methods are non-static in nature
 
 	// read the data from excel sheet
 		public String readExcelData(String excelPath,String sheetName,int rowCount,int cellCount) throws EncryptedDocumentException, IOException
@@ -30,14 +31,14 @@ public class Flib {
 		}
 		
 		
-		// to get row count
+		// to get last row count
 		public int rowCount(String excelPath,String sheetName) throws EncryptedDocumentException, IOException
 		{
-			FileInputStream fis = new FileInputStream(excelPath);
-			Workbook wb = WorkbookFactory.create(fis);
-			Sheet sheet = wb.getSheet(sheetName);
+			FileInputStream fis = new FileInputStream(excelPath);//provide the path of file
+			Workbook wb = WorkbookFactory.create(fis);//make the file ready for read
+			Sheet sheet = wb.getSheet(sheetName);//get into sheet
 			
-			int rc = sheet.getLastRowNum();
+			int rc = sheet.getLastRowNum();//get last row number
 			return rc;
 		}
 		
@@ -45,13 +46,16 @@ public class Flib {
 		//to write data in excel sheet
 		public void writeExcelData(String excelPath,String sheetName,int rowCount,int cellCount,String data) throws EncryptedDocumentException, IOException
 		{
-			FileInputStream fis = new FileInputStream(excelPath);
-			Workbook wb = WorkbookFactory.create(fis);
-			Sheet sheet = wb.getSheet(sheetName);
-			Row row = sheet.getRow(rowCount);
+			FileInputStream fis = new FileInputStream(excelPath);//provide the path of file
+			Workbook wb = WorkbookFactory.create(fis);//make the file ready for read
+			Sheet sheet = wb.getSheet(sheetName);//get into sheet
+			Row row = sheet.getRow(rowCount);//get desired row
 			
-			Cell cell = row.createCell(cellCount);
-			cell.setCellValue(data);
+			Cell cell = row.createCell(cellCount);//create new cell/column
+			cell.setCellValue(data);//pass the data to created new cell
+			
+			FileOutputStream fos = new FileOutputStream(excelPath);//to write
+			wb.write(fos);// write the data // make the file ready for write
 		}
 		
 		
