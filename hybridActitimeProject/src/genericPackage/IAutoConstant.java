@@ -2,7 +2,7 @@ package genericPackage;
 
 public interface IAutoConstant {
 	
-	String EXCEL_PATH="./data/ActitimeTestData";
+	String EXCEL_PATH="./data/ActitimeTestData.xlsx";
 	String PROP_PATH="./data/config.properties";
 	
 	String CHROME_KEY="webdriver.chrome.driver";
